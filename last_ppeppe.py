@@ -88,7 +88,7 @@ def transport_list_next(before, after):
 
 def transport_list_back(before, after):
     global i
-    if i >= 0:
+    if i > 0:
         transport_canvas(before, after)
         i=i-1
 
@@ -105,7 +105,7 @@ def transport_chapter_list_next(before, after):
 
 def transport_chapter_list_back(before, after):
     global j
-    if j >= 0:
+    if j > 0:
         transport_chapter_canvas(before, after)
         j=j-1
 
@@ -211,10 +211,10 @@ inputoutput_quiz_dic = {'question': ['Q1. 읽기용을 나타내는 파일 모�
                                                                                                              'w', 'a', 't'], ['read()', 'readline', 'readlines', 'writelines()']]}
 exception_quiz_dic = {'question': ['Q1. 예외처리에서 사용되지 않는 것을 고르시오.', 'Q2. 예외처리에 대해서 옳지 않은 것을 고르시오.'], 'answer': [1, 1], 'options': [['expect',
                                                                                                              'try', 'except', 'else'], ['예외처리를 하면 예외처리 안의 모든 문장이 실행된다.', 'try를 통해서 오류가 발생할 수 있는 문장을 쓴다.', 'except를 통해서 오류가 발생할 경우 실행할 문장을 쓴다.', 'else를 통해서 오류가 없을 때 실행할 문장을 쓴다.']]}
-class_quiz_dic = {'question': ['Q1. 다음 중 클래스의 정의로 옳은 것은?', 'Q2. 파이썬에서 초기화 메서드는 무엇인가?'], 'answer': [2, 1], 'options': [['파이썬에서만 제공되는 특별한 기능이다.',
+class_quiz_dic = {'question': ['Q1. 다음 중 클래스의 정의로 옳은 것은?', 'Q2. 다음 중 모듈의 종류가 다른 하나를 고르시오.'], 'answer': [2, 4], 'options': [['파이썬에서만 제공되는 특별한 기능이다.',
                                                                                                              '객체지향 프로그래밍의 핵심 개념이다.', '클래스와 필드는 동일한 용어이다.', '클래스 안에는 변수를 포함할 수 있는데, 이를 메서드라고 한다.'], ['__init__', '__init', '__init()__', '__init()']]}
 module_quiz_dic = {'question': ['Q1. import의 사용법은?', 'Q2. 모듈에 대해서 옳지 않은 것을 고르시오.'], 'answer': [1, 1], 'options': [['import 모듈이름',    
-'import 모듈함수', 'import 함수', 'import 모듈'], ['import는 현재 디렉터리에 있는 파일이나 파이썬 라이브러리가 저장된 디렉터리에 있는 모듈만 불러올 수는 없다.', '파이썬 확장자 .py로 만든 파이썬 파일은 모두 모듈이다.', '파이썬 라이브러리는 파이썬을 설치할 때 자동으로 설치되는 파이썬 모듈을 말한다.', 'from mod1 import *는 mod1.py의 모든 함수를 불러서 사용하겠다는 뜻이다.']]}
+'import 모듈함수', 'import 함수', 'import 모듈'], ['math', 'urlib.request', 'random', 'numpy.random']]}
 
 #-------------------------------------------------
 
@@ -714,7 +714,7 @@ chapter_2_canvas_list.append(canvas_6_7)
 
 #--------------------------------------
 
-exit_btn_6=Button(chapter_2_frame, text="EXIT", width=7, height=1, font=("DungGeunMo", 26 , "bold"), fg="white", bg="#124e8c", command=lambda:transport_exit_j(chapter_2_frame, main_menu_frame, chapter_2_frame))
+exit_btn_6=Button(chapter_2_frame, text="EXIT", width=7, height=1, font=("DungGeunMo", 26 , "bold"), fg="white", bg="#124e8c", command=lambda:transport_exit_j(chapter_2_frame, main_menu_frame, chapter_2_canvas_list))
 exit_btn_6.place(x=0, y=0)
 
 Quiz_btn_6=Button(chapter_2_frame, text="Quiz", width=7, height=1, font=("DungGeunMo", 26 , "bold"), bg="#ffe760", command=lambda:transport(chapter_2_frame, quiz_menu_frame))
